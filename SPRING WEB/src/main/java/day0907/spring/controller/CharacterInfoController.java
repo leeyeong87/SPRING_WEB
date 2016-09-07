@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/game/user/{userId}")
+@RequestMapping("/game/users/{userId}")
 public class CharacterInfoController {
 	
 	@RequestMapping("/characters/{characterId}")
@@ -14,6 +14,6 @@ public class CharacterInfoController {
 				@PathVariable int characterId, ModelMap model) {
 		model.addAttribute("userId", userId);
 		model.addAttribute("characterId", characterId);
-		return "game/character/info";
+		return "game/users/info";
 	}
 }

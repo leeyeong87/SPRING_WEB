@@ -47,7 +47,4 @@ public class CreateAccountController {
 		}
 		return "account/created";
 	}
-	
-	
-	
 }
