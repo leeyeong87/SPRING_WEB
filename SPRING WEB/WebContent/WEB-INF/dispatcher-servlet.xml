@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="helloController" class="day0907.spring.controller.HelloController" />
+
+	<bean id="newArticleController" class="day0907.spring.controller.NewArticleController"
+		p:articleService-ref="articleService" />
+
+	<bean id="articleService" class="day0907.spring.service.ArticleService" />
+
+	<bean class="day0907.spring.controller.OrderController" />
+
+	<bean id="searchController" class="day0907.spring.controller.SearchController" />
+
+	<bean id="cookieController" class="day0907.spring.controller.CookieController" />
+
+	<bean class="day0907.spring.controller.HeaderController" />
+	
+	<bean class="day0907.spring.controller.GameSearchController"
+		p:searchService-ref="searchService" />
+
+	<bean id="searchService" class="day0907.spring.service.SearchService" />
+	
+		<bean class="day0907.spring.controller.CreateAccountController" />
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages.validation</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="day0907.spring.controller.GameInfoController" />
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="alwaysUseFullPath" value="true" />
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="alwaysUseFullPath" value="true" />		
+	</bean>
+	
+	<bean class="day0907.spring.controller.CharacterInfoController" />
+</beans>
