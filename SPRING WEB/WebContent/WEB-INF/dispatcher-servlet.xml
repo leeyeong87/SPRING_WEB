@@ -59,4 +59,16 @@
 	</bean>
 	
 	<bean class="day0907.spring.controller.CharacterInfoController" />
+	
+	<bean id="commonLogger" class="day0907.spring.common.CommonLoggerImpl"/>
+	<bean id="authenticator" class="day0907.spring.service.MockAuthenticator"
+			p:commonLogger-ref="commonLogger"/>
+	<bean class="day0907.spring.controller.LoginController">
+	<property name="authenticator" ref="authenticator" />
+	</bean>
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+	<bean class="day0907.spring.controller.ReportSubmissionController" />
 </beans>

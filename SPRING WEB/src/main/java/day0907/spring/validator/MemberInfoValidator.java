@@ -1,6 +1,7 @@
 package day0907.spring.validator;
 
 import org.springframework.validation.Errors;
+/*import org.springframework.validation.Validator;*/
 import day0907.spring.model.Address;
 import day0907.spring.model.MemberInfo;
 
@@ -8,7 +9,8 @@ public class MemberInfoValidator {
 	public boolean supports(Class<?> clazz) {
 		return MemberInfo.class.isAssignableFrom(clazz);
 	}
-
+	
+	
 	public void validate(Object target, Errors errors) {
 		MemberInfo memberInfo = (MemberInfo) target;
 		if (memberInfo.getId() == null || memberInfo.getId().trim().isEmpty()) {

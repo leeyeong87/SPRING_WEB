@@ -18,6 +18,8 @@
 	<a href="game/users/you/characters/8282">/game/users/{1}/characters/{2}</a><br>
 	<a href="game/info.do">/game/info.do</a><br>
 	<a href="account/create.do">/account/create.do</a><br>
+	<a href="login/form.do">/login/form.do</a><br>
+	<a href="report/submission.do">/report/submission.do</a><br>
 	
 </body>
 </html>
