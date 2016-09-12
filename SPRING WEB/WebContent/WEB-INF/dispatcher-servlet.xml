@@ -11,6 +11,18 @@
 		http://www.springframework.org/schema/aop 
 		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
+	<context:property-placeholder location="classpath:db.properties"/>
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+	destroy-method="close">
+	
+	<property name="driverClass" value="${jdbc.driver}"/>
+	<property name="jdbcUrl" value="${jdbc.url}"/>
+	<property name="user" value="${jdbc.username}"/>
+	<property name="password" value="${jdbc.password}"/>
+	
+	</bean>
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
@@ -52,10 +64,17 @@
 	
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
 		<property name="alwaysUseFullPath" value="true" />
+		<property name="interceptors">
+			<list>
+				<ref bean="eventExpirationCheckInterceptor" />
+			</list>
+		</property>
 	</bean>
 	
+	<bean class="day0912.spring.controller.EventController" />
+	
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="alwaysUseFullPath" value="true" />		
+		<property name="alwaysUseFullPath" value="true" />
 	</bean>
 	
 	<bean class="day0907.spring.controller.CharacterInfoController" />
@@ -71,4 +90,32 @@
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</bean>
 	<bean class="day0907.spring.controller.ReportSubmissionController" />
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:sql/*.xml" />
+	</bean>
+	
+<!-- 	<bean id="uplaodDAO" class="day0909.spring.upload">
+		<property name="mapperLocations" value="classpath:SQL/*.xml" />
+	</bean> -->
+	
+	<bean class="day0912.spring.controller.QueryLogController" />
+	<bean id="eventExpirationCheckInterceptor" class="day0912.spring.controller.EventExpirationCheckInterceptor" />
+	
+	<bean class="day0912.spring.controller.ArithmeticOperatorController" />
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.ArithmeticException">
+					error/mathException
+				</prop>
+				<prop key="java.lang.Exception">
+					error/exception
+				</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="day0912.spring.controller.SimpleConverterController" />
 </beans>

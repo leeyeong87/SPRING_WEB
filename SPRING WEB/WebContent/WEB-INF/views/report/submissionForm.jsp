@@ -6,8 +6,8 @@
 <title>리포트 제출</title>
 </head>
 <body>
-<h3>@RequestParam 사용</h3>
-<form action="submitReport1.do" method="post" enctype="multipart/form-data">
+	<h3>@RequestParam 사용</h3>
+	<form action="submitReport1.do" method="post" enctype="multipart/form-data">
 		학번: <input type="text" name="studentNumber" />
 		<br/>
 		리포트파일: <input type="file" name="report" />

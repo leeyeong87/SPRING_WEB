@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="file">
+	
+	<insert id="addfile" parameterType="day0909.spring.upload.UploadfileVo">
+	 insert into saveimg values
+				(#{o_name},#{filename},#{ructe},#{f_size})
+	</insert>
+	
+</mapper>
