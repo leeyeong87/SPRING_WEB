@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 public class CityServiceImpl implements CityService{
 	
 	@Autowired
-	private CommonDAO dao;
+	private CityDAO dao;
 	
-	public void serDao(CommonDAO dao){
+	public void setDao(CityDAO dao){
 		this.dao = dao;
 	}
 	
@@ -29,7 +29,7 @@ public class CityServiceImpl implements CityService{
 		List<String> list = null;
 		
 		try{
-			list = dao.getListDate("city.listCity", city);
+			list = dao.getListData("city.listCity", city);
 		}catch(Exception e){
 			System.out.println(e.toString());
 		}
