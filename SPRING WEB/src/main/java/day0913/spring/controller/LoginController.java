@@ -9,16 +9,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import day0913.spring.controller.AuthenticationException;
-import day0913.spring.controller.Authenticator;
-import day0913.spring.controller.LoginCommand;
-
 @Controller
 @RequestMapping("/login/login")
 public class LoginController {
 	
 	private Authenticator authenticator;
 	
+	
+	public Authenticator getAuthenticator() {
+		return authenticator;
+	}
+
+	public void setAuthenticator(Authenticator authenticator) {
+		this.authenticator = authenticator;
+	}
+
 	@ModelAttribute("login")
 	public LoginCommand formBacking(){
 		return new LoginCommand();

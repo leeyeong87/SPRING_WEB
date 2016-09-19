@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <html>
 <head>
 <title>index</title>
@@ -28,6 +29,9 @@
 	<a href="test/simpleTest1.do">/test/simpleTest1.do</a><br>
 	<a href="test/simpleTest2.do">/test/simpleTest2.do</a><br>
 	<a href="city/city.do">/city/city.do</a><br>
+	<a href="member/regist.do">/member/regist.do</a><br>
+	<a href="changeLanguage?lang=ko">/jsp/changeLanguage?lang=ko</a>
+	<a href="changeLanguage?lang=en">/jsp/changeLanguage?lang=en</a>
 	
 </body>
 </html>

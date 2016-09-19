@@ -14,7 +14,7 @@
         		(viewjsp/loginForm.jsp, &lt;form:* /&gt; 태그 및 &lt;spring:message&gt; 태그 예제) 
         	</li>
         	<li>
-        		<a href="<c:url value='/jsp/member/regist.do'/>">/jsp/member/regist.do</a>
+        		<a href="<c:url value='member/regist.do'/>">/jsp/member/regist.do</a>
         		(viewjsp/registMemberForm.jsp, &lt;form:label/&gt; 태그 예제) 
         	</li>
         	<li>
@@ -22,8 +22,8 @@
         		(viewjsp/article/*.jsp, &lt;form:form&gt; 태그의 RESTful 지원 예제) 
            	</li>
 			<li>
-				<a href="<c:url value='/jsp/changeLanguage'/>?lang=ko">/jsp/changeLanguage?lang=ko</a>
-				<a href="<c:url value='/jsp/changeLanguage'/>?lang=en">/jsp/changeLanguage?lang=en</a>
+				<a href="<c:url value='/changeLanguage'/>?lang=ko">/jsp/changeLanguage?lang=ko</a>
+				<a href="<c:url value='/changeLanguage'/>?lang=en">/jsp/changeLanguage?lang=en</a>
 				(LocaleChangeController, LocaleResolver 직접 이용 Locale 변환 예제)
 				<br/>
 				링크 클릭 후, <a href="<c:url value='/jsp/login/login.do'/>">/jsp/login/login.do</a>에서 라벨 확인 
