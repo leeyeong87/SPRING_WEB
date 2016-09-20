@@ -30,8 +30,16 @@
 	<a href="test/simpleTest2.do">/test/simpleTest2.do</a><br>
 	<a href="city/city.do">/city/city.do</a><br>
 	<a href="member/regist.do">/member/regist.do</a><br>
-	<a href="changeLanguage?lang=ko">/jsp/changeLanguage?lang=ko</a>
-	<a href="changeLanguage?lang=en">/jsp/changeLanguage?lang=en</a>
+	<a href="changeLanguage?lang=ko">/jsp/changeLanguage?lang=ko</a><br>
+	<a href="changeLanguage?lang=en">/jsp/changeLanguage?lang=en</a><br>
+	<a href="tiles/login/login.do">/login/login.do</a><br>
+	<a href="tiles/member/regist.do">/member/regist.do</a><br>
+	<a href="download/file.do">/download/file</a><br>
+        		(DownloadController ¹× DownloadView ¿¹Á¦)<br>
+    <a href="download/pageRanks.do">/download/pageRanks</a><br>
+    <a href="download/pageReport.do">/download/pageReport</a><br>
+    <a href="download/pageXmlReport.do">/download/pageXmlReport</a><br>
+    <a href="download/pageJsonReport.do">/download/pageJsonReport</a><br>
 	
 </body>
 </html>
